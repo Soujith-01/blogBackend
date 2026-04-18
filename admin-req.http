@@ -1,0 +1,27 @@
+###admin login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"admin"
+}
+
+###read all users and authors(email)
+GET http://localhost:3000/admin-api/users
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"admin"
+
+}
+
+###block or activate user and author
+PATCH http://localhost:3000/admin-api/users
+Content-Type: application/json
+
+{
+    "userId":"69b6f165014f62e1b94a97ca",
+    "isUserActive":true
+}

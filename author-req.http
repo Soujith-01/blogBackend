@@ -1,0 +1,56 @@
+###regitser author
+POST http://localhost:3000/auth/users
+Content-Type: application/json
+
+{
+    "firstName":"author2",
+    "lastName":"",
+    "email":"author2@mail.com",
+    "role":"AUTHOR",
+    "password":"author2",
+    "profileImageUrl":"okscoidjc"
+}
+
+###create new article
+POST http://localhost:3000/author-api/article
+Content-Type: application/json
+
+{
+    "author":"69b3cc59c81f9ba6e7886403",
+    "title":"Article-2 by Author-2",
+    "category":"wfdwe",
+    "content":"article on AI"
+}
+
+###read own articles
+Get http://localhost:3000/author-api/articles
+
+###login request
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"author2@mail.com",
+    "password":"author2"
+}
+
+
+###update article
+PUT http://localhost:3000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3d470639c245c55ebd4b4",
+    "title":"Article-3 by Author-2",
+    "category":"DAA",
+    "content":"article on DAA"
+}
+
+###delete/restore article by articleId(soft delete)
+PATCH http://localhost:3000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3d470639c245c55ebd4b4",
+    "isArticleActive":true
+}

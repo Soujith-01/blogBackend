@@ -1,0 +1,45 @@
+###register User
+POST http://localhost:3000/auth/users
+Content-Type: application/json
+
+{
+    "firstName":"author1",
+    "lastName":"",
+    "email":"author1@mail.com",
+    "role":"AUTHOR",
+    "password":"author1",
+    "profileImageUrl":"okscoidjc"
+}
+
+###user login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email":"admin@gmail.com",
+    "password":"admin1"
+}
+
+###user logout
+GET http://localhost:3000/auth/logout
+
+###Read articles of all authors
+GET http://localhost:3000/user-api/articles
+
+###add a comment to article
+PUT http://localhost:3000/user-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3d470639c245c55ebd4b4",
+    "comment":"Nice Article"
+}
+
+###change password
+PUT http://localhost:3000/auth/password
+Content-Type: application/json
+
+{
+    "currentPassword":"admin1",
+    "newPassword":"admin11"
+}
